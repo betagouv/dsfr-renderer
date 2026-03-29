@@ -1,0 +1,35 @@
+{
+	"name": "dsfr-renderer-react",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"scripts": {
+		"build": "bun build ./src/index.ts --outdir ./dist --target node --sourcemap --external react --external react-dom --external @json-render/core --external @json-render/react --external @gouvfr/dsfr --external dsfr-renderer-core",
+		"dev": "bun build ./src/index.ts --outdir ./dist --target node --sourcemap --external react --external react-dom --external @json-render/core --external @json-render/react --external @gouvfr/dsfr --external dsfr-renderer-core --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@json-render/core": "^0.16.0",
+		"@json-render/react": "^0.14.0",
+		"dsfr-renderer-core": "workspace:*",
+		"zod": "^4.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.0.0",
+		"dsfr-renderer-typescript-config": "workspace:*",
+		"react": "^19.0.0",
+		"typescript": "^5.7.0"
+	},
+	"peerDependencies": {
+		"@gouvfr/dsfr": ">=1.14.0",
+		"react": ">=18.0.0"
+	}
+}
