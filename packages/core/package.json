@@ -1,0 +1,27 @@
+{
+	"name": "dsfr-renderer-core",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"scripts": {
+		"build": "bun build ./src/index.ts --outdir ./dist --target node --sourcemap --external zod --external @json-render/core",
+		"dev": "bun build ./src/index.ts --outdir ./dist --target node --sourcemap --external zod --external @json-render/core --watch",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@json-render/core": "^0.16.0",
+		"zod": "^4.0.0"
+	},
+	"devDependencies": {
+		"dsfr-renderer-typescript-config": "workspace:*",
+		"typescript": "^5.7.0"
+	}
+}

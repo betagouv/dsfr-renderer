@@ -1,24 +1,27 @@
+// Core (catalog - framework-agnostic)
 export {
-  dsfrComponentDefinitions,
-  Button,
-  Input,
-  Select,
-  Card,
-  Alert,
-  Heading,
-  Text,
-  Stack,
-} from "./catalog/index.js";
+	dsfrComponentDefinitions,
+	Alert as AlertDefinition,
+	Button as ButtonDefinition,
+	Card as CardDefinition,
+	Heading as HeadingDefinition,
+	Input as InputDefinition,
+	Select as SelectDefinition,
+	Stack as StackDefinition,
+	Text as TextDefinition,
+} from "dsfr-renderer-core";
 
-export { dsfrComponents, useDsfr, useDsfrInstance } from "./react/index.js";
-
+// React components
 export {
-  Button as ButtonComponent,
-  Input as InputComponent,
-  Select as SelectComponent,
-  Card as CardComponent,
-  Alert as AlertComponent,
-  Heading as HeadingComponent,
-  Text as TextComponent,
-  Stack as StackComponent,
-} from "./react/index.js";
+	dsfrComponents,
+	useDsfr,
+	useDsfrInstance,
+	Alert as AlertComponent,
+	Button as ButtonComponent,
+	Card as CardComponent,
+	Heading as HeadingComponent,
+	Input as InputComponent,
+	Select as SelectComponent,
+	Stack as StackComponent,
+	Text as TextComponent,
+} from "dsfr-renderer-react";
