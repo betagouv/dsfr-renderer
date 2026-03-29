@@ -1,0 +1,72 @@
+{
+  "name": "@gouvfr/dsfr-renderer",
+  "version": "0.0.1",
+  "description": "json-render integration for DSFR — Generate AI-powered French government interfaces with type-safe components",
+  "keywords": [
+    "dsfr",
+    "json-render",
+    "react",
+    "ai",
+    "generative-ui",
+    "french-government",
+    "design-system",
+    "france",
+    "rgaa",
+    "accessibility"
+  ],
+  "author": "BetaGouv",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betagouv/dsfr-renderer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/betagouv/dsfr-renderer/issues"
+  },
+  "homepage": "https://github.com/betagouv/dsfr-renderer#readme",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./catalog": {
+      "import": "./dist/catalog/index.js",
+      "types": "./dist/catalog/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "pnpm run clean && pnpm run build"
+  },
+  "peerDependencies": {
+    "@json-render/core": ">=0.11.0",
+    "@json-render/react": ">=0.11.0",
+    "@gouvfr/dsfr": ">=1.14.0",
+    "react": ">=18.0.0",
+    "zod": ">=4.0.0"
+  },
+  "devDependencies": {
+    "@json-render/core": "^0.11.0",
+    "@json-render/react": "^0.11.0",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0",
+    "zod": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

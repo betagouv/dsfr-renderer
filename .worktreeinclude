@@ -1,0 +1,4 @@
+# Files to copy to new worktrees via wt step copy-ignored
+.env
+.env.local
+.env.*
