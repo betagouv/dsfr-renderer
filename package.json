@@ -52,7 +52,7 @@
 		"clean": "rm -rf dist && turbo run clean",
 		"prepublishOnly": "bun run clean && bun run build"
 	},
-	"workspaces": ["packages/*"],
+	"workspaces": ["packages/*", "apps/*"],
 	"dependencies": {
 		"@json-render/core": "^0.16.0",
 		"@json-render/react": "^0.14.0",
