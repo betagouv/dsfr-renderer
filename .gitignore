@@ -17,3 +17,6 @@ Thumbs.db
 
 # Turbo
 .turbo/
+
+*storybook.log
+storybook-static

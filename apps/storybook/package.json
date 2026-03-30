@@ -1,0 +1,28 @@
+{
+	"name": "dsfr-renderer-storybook",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"dev": "storybook dev -p 6006"
+	},
+	"dependencies": {
+		"@gouvfr/dsfr": "^1.14.0",
+		"dsfr-renderer-react": "workspace:*",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@storybook/addon-a11y": "^10.3.3",
+		"@storybook/addon-docs": "^10.3.3",
+		"@storybook/addon-vitest": "^10.3.3",
+		"@storybook/react": "^10.3.3",
+		"@storybook/react-vite": "^10.3.3",
+		"@vitest/browser-playwright": "^4.1.2",
+		"storybook": "^10.3.3",
+		"vite": "^6.0.0",
+		"vitest": "^4.1.2"
+	}
+}
