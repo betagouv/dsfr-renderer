@@ -1,16 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Heading } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-const HeadingStory = (props: {
-	text: string;
-	level?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-	size?: "xs" | "sm" | "md" | "lg" | "xl";
-}) => {
-	return Heading({
-		element: { props },
-		emit: () => {},
-	});
-};
+const HeadingStory = createStoryComponent(Heading);
 
 const meta: Meta<typeof HeadingStory> = {
 	title: "Components/Heading",

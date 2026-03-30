@@ -1,18 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Alert } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-const AlertStory = (props: {
-	title?: string;
-	message: string;
-	type: "info" | "success" | "warning" | "error";
-	size?: "sm" | "md";
-	closable?: boolean;
-}) => {
-	return Alert({
-		element: { props },
-		emit: () => {},
-	});
-};
+const AlertStory = createStoryComponent(Alert);
 
 const meta: Meta<typeof AlertStory> = {
 	title: "Components/Alert",

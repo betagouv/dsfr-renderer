@@ -1,22 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Select } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-const SelectStory = (props: {
-	label: string;
-	name: string;
-	options: Array<{ value: string; label: string }>;
-	value?: string;
-	placeholder?: string;
-	disabled?: boolean;
-	required?: boolean;
-	state?: "default" | "success" | "error";
-	stateMessage?: string;
-}) => {
-	return Select({
-		element: { props },
-		emit: (event: string) => console.log(`Event: ${event}`),
-	});
-};
+const SelectStory = createStoryComponent(Select);
 
 const meta: Meta<typeof SelectStory> = {
 	title: "Components/Select",

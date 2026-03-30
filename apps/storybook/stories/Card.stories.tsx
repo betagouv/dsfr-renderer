@@ -1,23 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Card } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-const CardStory = (props: {
-	title?: string;
-	description?: string;
-	image?: string;
-	imageAlt?: string;
-	link?: string;
-	linkLabel?: string;
-	size?: "sm" | "md" | "lg";
-	horizontal?: boolean;
-	children?: React.ReactNode;
-}) => {
-	return Card({
-		element: { props },
-		emit: () => {},
-		children: props.children,
-	});
-};
+const CardStory = createStoryComponent(Card);
 
 const meta: Meta<typeof CardStory> = {
 	title: "Components/Card",
@@ -54,7 +39,7 @@ export const WithImage: Story = {
 	args: {
 		title: "Carte illustrée",
 		description: "Une carte avec une image d'illustration.",
-		image: "https://via.placeholder.com/400x200",
+		image: "https://placehold.co/400x200",
 		imageAlt: "Image d'illustration",
 		link: "#",
 	},
@@ -64,7 +49,7 @@ export const Horizontal: Story = {
 	args: {
 		title: "Carte horizontale",
 		description: "Affichage horizontal pour les espaces restreints.",
-		image: "https://via.placeholder.com/200x150",
+		image: "https://placehold.co/200x150",
 		horizontal: true,
 	},
 };

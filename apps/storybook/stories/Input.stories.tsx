@@ -1,23 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Input } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-const InputStory = (props: {
-	label: string;
-	name: string;
-	type?: "text" | "email" | "password" | "number" | "tel" | "url" | "date";
-	placeholder?: string;
-	value?: string;
-	hint?: string;
-	disabled?: boolean;
-	required?: boolean;
-	state?: "default" | "success" | "error";
-	stateMessage?: string;
-}) => {
-	return Input({
-		element: { props },
-		emit: (event: string) => console.log(`Event: ${event}`),
-	});
-};
+const InputStory = createStoryComponent(Input);
 
 const meta: Meta<typeof InputStory> = {
 	title: "Components/Input",

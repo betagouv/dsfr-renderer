@@ -1,20 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-// Wrapper to adapt ComponentRenderer for Storybook
-const ButtonStory = (props: {
-	label: string;
-	variant?: "primary" | "secondary" | "tertiary";
-	size?: "sm" | "md" | "lg";
-	disabled?: boolean;
-	icon?: string;
-	iconPosition?: "left" | "right";
-}) => {
-	return Button({
-		element: { props },
-		emit: (event: string) => console.log(`Event: ${event}`),
-	});
-};
+const ButtonStory = createStoryComponent(Button);
 
 const meta: Meta<typeof ButtonStory> = {
 	title: "Components/Button",

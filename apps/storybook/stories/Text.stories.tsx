@@ -1,15 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Text } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-const TextStory = (props: {
-	text: string;
-	variant?: "default" | "sm" | "xs" | "lead" | "bold" | "muted";
-}) => {
-	return Text({
-		element: { props },
-		emit: () => {},
-	});
-};
+const TextStory = createStoryComponent(Text);
 
 const meta: Meta<typeof TextStory> = {
 	title: "Components/Text",

@@ -1,26 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Stack, Button } from "dsfr-renderer-react";
+import { createStoryComponent } from "./utils";
 
-const StackStory = (props: {
-	direction?: "row" | "column" | "row-reverse" | "column-reverse";
-	gap?: "none" | "vsm" | "sm" | "md" | "lg" | "xl";
-	align?: "start" | "center" | "end" | "stretch" | "baseline";
-	justify?: "start" | "center" | "end" | "between" | "around" | "evenly";
-	wrap?: boolean;
-	children?: React.ReactNode;
-}) => {
-	return Stack({
-		element: { props },
-		emit: () => {},
-		children: props.children,
-	});
-};
-
-const ButtonElement = (label: string) =>
-	Button({
-		element: { props: { label } },
-		emit: () => {},
-	});
+const StackStory = createStoryComponent(Stack);
+const ButtonStory = createStoryComponent(Button);
 
 const meta: Meta<typeof StackStory> = {
 	title: "Components/Stack",
@@ -52,9 +35,9 @@ type Story = StoryObj<typeof StackStory>;
 export const Horizontal: Story = {
 	render: () => (
 		<StackStory direction="row" gap="md">
-			{ButtonElement("Bouton 1")}
-			{ButtonElement("Bouton 2")}
-			{ButtonElement("Bouton 3")}
+			<ButtonStory label="Bouton 1" />
+			<ButtonStory label="Bouton 2" />
+			<ButtonStory label="Bouton 3" />
 		</StackStory>
 	),
 };
@@ -62,9 +45,9 @@ export const Horizontal: Story = {
 export const Vertical: Story = {
 	render: () => (
 		<StackStory direction="column" gap="md">
-			{ButtonElement("Bouton 1")}
-			{ButtonElement("Bouton 2")}
-			{ButtonElement("Bouton 3")}
+			<ButtonStory label="Bouton 1" />
+			<ButtonStory label="Bouton 2" />
+			<ButtonStory label="Bouton 3" />
 		</StackStory>
 	),
 };
@@ -72,18 +55,18 @@ export const Vertical: Story = {
 export const Centered: Story = {
 	render: () => (
 		<StackStory direction="row" justify="center" gap="md">
-			{ButtonElement("Gauche")}
-			{ButtonElement("Centre")}
-			{ButtonElement("Droite")}
+			<ButtonStory label="Gauche" />
+			<ButtonStory label="Centre" />
+			<ButtonStory label="Droite" />
 		</StackStory>
 	),
 };
 
 export const SpaceBetween: Story = {
 	render: () => (
-		<StackStory direction="row" justify="between" style={{ width: "100%" }}>
-			{ButtonElement("Gauche")}
-			{ButtonElement("Droite")}
+		<StackStory direction="row" justify="between">
+			<ButtonStory label="Gauche" />
+			<ButtonStory label="Droite" />
 		</StackStory>
 	),
 };
@@ -91,7 +74,9 @@ export const SpaceBetween: Story = {
 export const WithWrap: Story = {
 	render: () => (
 		<StackStory direction="row" gap="sm" wrap>
-			{Array.from({ length: 10 }, (_, i) => ButtonElement(`Bouton ${i + 1}`))}
+			{Array.from({ length: 10 }, (_, i) => (
+				<ButtonStory key={i} label={`Bouton ${i + 1}`} />
+			))}
 		</StackStory>
 	),
 };
@@ -102,33 +87,33 @@ export const Gaps: Story = {
 			<div>
 				<p>Gap: vsm</p>
 				<StackStory direction="row" gap="vsm">
-					{ButtonElement("A")}
-					{ButtonElement("B")}
-					{ButtonElement("C")}
+					<ButtonStory label="A" />
+					<ButtonStory label="B" />
+					<ButtonStory label="C" />
 				</StackStory>
 			</div>
 			<div>
 				<p>Gap: sm</p>
 				<StackStory direction="row" gap="sm">
-					{ButtonElement("A")}
-					{ButtonElement("B")}
-					{ButtonElement("C")}
+					<ButtonStory label="A" />
+					<ButtonStory label="B" />
+					<ButtonStory label="C" />
 				</StackStory>
 			</div>
 			<div>
 				<p>Gap: md</p>
 				<StackStory direction="row" gap="md">
-					{ButtonElement("A")}
-					{ButtonElement("B")}
-					{ButtonElement("C")}
+					<ButtonStory label="A" />
+					<ButtonStory label="B" />
+					<ButtonStory label="C" />
 				</StackStory>
 			</div>
 			<div>
 				<p>Gap: lg</p>
 				<StackStory direction="row" gap="lg">
-					{ButtonElement("A")}
-					{ButtonElement("B")}
-					{ButtonElement("C")}
+					<ButtonStory label="A" />
+					<ButtonStory label="B" />
+					<ButtonStory label="C" />
 				</StackStory>
 			</div>
 		</div>
